@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	  <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+   	<link
+      rel="icon"
+      href="https://i.ibb.co/WH4Vgyr/SShell-Logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>SShell</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background:url("https://i.ibb.co/tPVVPjX/new.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .banner-area h2 {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        color: #30c1ff;
+        font-size: 2.5em;
+      }
+      .banner-area h3 {
+        color: #eee;
+        position: absolute;
+        top: 75%;
+        left: 39%;
+         font-size: 2.5em;
+      }
+		 .join {
+        display: block;
+  width: 20%;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right,#314e7d, #30c1ff, #314e7d);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+}
+.join:hover{
+  background-position: right;
+}
+      .section-services {
+        padding-top: 110px;
+        padding-bottom: 120px;
+        font-family: "Poppins", sans-serif;
+        
+        color: #fff;
+      }
+
+      .section-services .header-section {
+        margin-bottom: 35px;
+      }
+
+      .section-services .header-section .title {
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 25px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .section-services .header-section .title:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 1px;
+        background-color: #f70037;
+      }
+
+      .section-services .header-section .title:after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 45px;
+        height: 3px;
+        background-color: #f70037;
+      }
+
+      .section-services .header-section .title span {
+        color:#1cceff;
+      }
+
+      .section-services .header-section .description {
+        color: #242324;
+      }
+
+      .section-services .single-service {
+        margin-top: 40px;
+        background-color: #242324;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .section-services .single-service .part-1 {
+        padding: 40px 40px 25px;
+        border-bottom: 2px solid #0b0e1c;
+      }
+
+      .section-services .single-service .part-1 i {
+        margin-bottom: 25px;
+        font-size: 50px;
+        color: #36bfff;
+      }
+
+      .section-services .single-service .part-1 .title {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        line-height: 1.8em;
+      }
+
+      .section-services .single-service .part-2 {
+        padding: 30px 40px 40px;
+      }
+
+      .section-services .single-service .part-2 .description {
+        margin-bottom: 22px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 1.8em;
+      }
+
+      .section-services .single-service .part-2 a {
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .section-services .single-service .part-2 a i {
+        margin-right: 10px;
+        color: #36bfff;
+      }
+      .numbers .col-lg-4 {
+        box-sizing: border-box;
+        text-align: center;
+        border: 80px solid #36bfff;
+        font-size: 40px;
+        padding: 60px;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      .footer {
+        width: 100%;
+        margin: auto;
+        display: block;
+        background: #242324;
+      }
+      .inner-footer {
+        width: 95%;
+        margin: auto;
+        padding: 30px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        justify-content: center;
+      }
+      .footer-items {
+        width: 25%;
+        padding: 1px 20px;
+        box-sizing: border-box;
+      }
+      .sshell-logo-footer{
+      position:absolute;
+      width:15%;
+    }
+      .footer h1 {
+        padding: 10px 0;
+        font-size: 25px;
+        color: #fff;
+      }
+      .footer-items p {
+        color: grey;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 25px;
+      }
+      .footer h2 {
+        margin: 10px 0;
+        color: white;
+        font-size: 25px;
+        font-weight: lighter;
+      }
+
+      .footer ul {
+        list-style: none;
+        color: #fff;
+        font-size: 15px;
+      }
+      .footer ul a {
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        transition: 0.3s;
+      }
+      .footer ul a:hover {
+        color: #f70037;
+      }
+      .footer ul li {
+        margin: 10px 0;
+        height: 25px;
+      }
+      .footer li i {
+        margin-right: 20px;
+      }
+      .social-media {
+        width: 100%;
+        color: #fff;
+        text-align: center;
+      }
+      .social-media a {
+        text-decoration: none;
+      }
+      .social-media i {
+        font-size: 25px;
+        height: 15px;
+        width: 15px;
+        margin: 20px 5px;
+        padding: 10px;
+        color: #fff;
+        transition: 0.3s;
+      }
+      .social-media i:hover {
+        color: #f70037;
+      }
+      .footer-bottom {
+        text-align: center;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        font-size: 12px;
+      }
+      @media screen and (max-width: 1085px) {
+        .footer-items {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .footer-items {
+          width: 100%;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      #scrollPath {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      #progressbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 10px;
+        z-index: 99999;
+        background: #00b7ff;
+      }
+
+      #progressbar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:#00b7ff;
+        filter: blur(10px);
+      }
+      #progressbar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #00b7ff;
+        filter: blur(10px);
+      }
+      .numbers {
+        display: flex;
+        justify-content: space-around;
+      }
+      .flexbox-item {
+        width: 170px;
+        height: 170px;
+        margin: 10px;
+        margin-bottom: 50px;
+        border: 2px solid #1cceff;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.8);
+        position: relative;
+      }
+      .flexbox-item p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+      }
+      .flexbox-item h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+      }
+      .flexbox-item .one {
+        position: absolute;
+        top: 116%;
+      }
+		.sshell-logo{
+			position:absolute;
+			top:26%;
+			left:37.5%;
+			width:23%;
+		}
+    </style>
+  </head>
+  <body>
+ <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="z-index: 9999999;"
+    >
+      <a class="navbar-brand" href="#" style="font-size: 30px;"
+        >S<span style="color: #1cceff;">SHELL</span></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/team">Our Team</a>
+          </li>
+          
+          <li class="nav-item active">
+            <a class="nav-link" href="/contact">Contact us</a>
+          </li>
+
+          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="/login" style="color: white">
+            CTF</a
+          >&nbsp;
+          
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+			
+          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="/login">
+            Login</a
+          >&nbsp;
+          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="/register">
+            Sign Up</a
+          >&nbsp;
+			
+			<a href="#" style="color:white;text-decoration:none">Signed in as </a>&nbsp;&nbsp;&nbsp;	
+          <a class="btn btn-outline-primary my-2 my-sm-0" href="/logout" style="font-weight:bold;">
+            Logout
+          </a>
+			
+        </form> -->
+      </div>
+    </nav>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+	 		    
+	  <a href="#"><img src="https://i.ibb.co/WH4Vgyr/SShell-Logo.png" alt="SShell-Logo" border="0" class="sshell-logo"></a>
+    <div class="banner-area">
+      <h3><b>PEN-TESTING LABS</b></h3><br>
+      <h2>
+        Are You @:~<span class="type" style="color: white;"></span>
+      </h2>
+    </div>
+     <br> <br> <br> <br> <br> <br> 
+     <br> <br> <br> <br> <br> <br> 
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <div
+      class="d-flex bd-highlight"
+      style="padding: 70px; background: rgba(0, 0, 0, 0.8);"
+    >
+      <div class="p-2 w-100 bd-highlight" style="color: white;">
+        <h1>
+          About <span style="color: #30c1ff">S</span><span style="color:white;">SHELL</span></h1>
+        
+        <p>
+           SSHELL is an upcoming platform founded by young indian enthusiasts , who highly value<br>
+           their ambition to bring awareness and spread maximum knowledge  about cyber space.<br>
+           SSHELL is  here for  you to reach your milestone in cyber sense hence we are developing<br>
+          an online community and  platform allowing you to test your penetration testing skills and<br>
+          exchange experience  with  people stark in this field .
+        </p>
+        <button class="join">join</button>
+        
+      </div>
+
+      <div
+        class="p-2 flex-shrink-1 bd-highlight"
+        style="border: 1px solid white; color: white; padding: 5px;"
+      >
+        <iframe
+          width="420"
+          height="315"
+          src=""
+        >
+        </iframe>
+        <div
+          class="d-flex justify-content-end"
+          style="padding-right: 20px;"
+        ></div>
+      </div>
+    </div>
+     <div class="features">
+      <section class="section-services">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-10 col-lg-8">
+              <div class="header-section">
+                <h2 class="title">Exclusive <span>Features</span></h2>
+                <p class="description" style="color:cyan">We have a lot to offer!</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start Single Service -->
+            <div class="col-md-6 col-lg-4">
+              <div class="single-service">
+                <div class="part-1">
+                  <i class="fa fa-cogs"></i>
+                  <h3 class="title">Massive Labs and Machines</h3>
+                </div>
+                <div class="part-2">
+                  <p class="description">
+                    Learn, practice and complete! Get hands on and practise your
+                    skills in a real-world environment by completing guided and
+                    interactive tasks..
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- / End Single Service -->
+            <!-- Start Single Service -->
+            <div class="col-md-6 col-lg-4">
+              <div class="single-service">
+                <div class="part-1">
+                  <i class="fab fa-angellist"></i>
+                  <h3 class="title">Workshops</h3>
+                </div>
+                <div class="part-2">
+                  <p class="description">
+                   
+                    Need security training? We deliver hands on workshops. We use trainers experienced in the field of interest.<br /><br />
+                  </p>
+
+                  
+                </div>
+              </div>
+            </div>
+            <!-- / End Single Service -->
+            <!-- Start Single Service -->
+            <div class="col-md-6 col-lg-4">
+              <div class="single-service">
+                <div class="part-1">
+                  <i class="fas fa-award"></i>
+                  <h3 class="title">Ranks and Badges</h3>
+                </div>
+                <div class="part-2">
+                  <p class="description">
+                    Compete with other users to reach the top and show off your
+                    progress with many different ranks and badges.<br /><br />
+                  </p>
+
+                  
+                </div>
+              </div>
+            </div>
+            <!-- / End Single Service -->
+            <!-- Start Single Service -->
+            <div class="col-md-6 col-lg-4">
+              <div class="single-service">
+                <div class="part-1">
+                  <i class="fa fa-desktop"></i>
+                  <h3 class="title">Dedicated Labs</h3>
+                </div>
+                <div class="part-2">
+                  <p class="description">
+                    Rent your own private lab for your company or university,
+                    fully managed and tailored to your requirements.<br /><br />
+                  </p>
+
+                  
+                </div>
+              </div>
+            </div>
+            <!-- / End Single Service -->
+            <!-- Start Single Service -->
+            <div class="col-md-6 col-lg-4">
+              <div class="single-service">
+                <div class="part-1">
+                  <i class="fa fa-book"></i>
+                  <h3 class="title">Guides</h3>
+                </div>
+                <div class="part-2">
+                  <p class="description">
+                    Develop your Cybersecurity skills by working through hands-on guided tasks and supporting videos.
+                  </p><br>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- / End Single Service -->
+            <!-- Start Single Service -->
+            <div class="col-md-6 col-lg-4">
+              <div class="single-service">
+                <div class="part-1">
+                  <i class="fa fa-code"></i>
+                  <h3 class="title">Challenges</h3>
+                </div>
+                <div class="part-2">
+                  <p class="description">
+                    Learn and test your skills with gamified, real-world Cybersecurity challenges.<br><br><br>
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- / End Single Service -->
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="numbers" style="color: white;">
+      <div class="flexbox-item">
+        <h1>10</h1>
+        <p class="one">Users</p>
+      </div>
+      <div class="flexbox-item">
+        <p>Coming      soon</p>
+        <p class="one">Labs</p>
+      </div>
+      <div class="flexbox-item">
+        <p>Coming   soon</p>
+        <p class="one">Machines</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+      <div class="inner-footer">
+        <div class="footer-items">
+         
+          <a href="#"><img src="https://i.ibb.co/WH4Vgyr/SShell-Logo.png" alt="SShell-Logo" border="0" class="sshell-logo-footer"></a>
+        </div>
+       
+        <div class="footer-items">
+          <h2>Quick Links</h2>
+          <ul>
+            <a href="#">
+              <li>Home</li>
+            </a>
+            
+            <a href="/team">
+              <li>Our Team</li>
+            </a>
+            <a href="/contact">
+              <li>Contact Us</li>
+            </a>
+          </ul>
+        </div>
+        <div class="footer-items">
+          <h1>Services</h1>
+          <ul>
+            <a href="/labs">
+              <li>Labs</li>
+            </a>
+            <a href="/machines">
+              <li>Machines</li>
+            </a>
+            <a href="">
+              <li>Workshops</li>
+            </a>
+          </ul>
+        </div>
+        <div class="footer-items">
+          <h1>Contact us</h1>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker-alt"></i>&nbsp;Mit-Wpu,Pune,India
+            </li>
+            <a href=""><li><i class="fa fa-phone"></i>&nbsp;7559235135</li></a>
+            <a href=""><li><i class="fa fa-envelope"></i>&nbsp;contact@sshell.in</li></a>
+          </ul>
+          <div class="social-media" style="color: white;">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Copyright &copy; sshell.in 2020. All rights reserved.
+	  </div>
+    <script>
+      let progress = document.getElementById("progressbar");
+      let totalHeight = document.body.scrollHeight - window.innerHeight;
+      window.onscroll = function () {
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%";
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+      var typed = new Typed(".type", {
+        strings: [
+          "Beginner",
+          "Hacker",
+          "Linux User",
+          "Geek",
+          "Learner",
+        ],
+        typeSpeed: 60,
+        backSpeed: 60,
+        loop: true,
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+    <script>
+      $(".counter").counterUp({
+        delay: 10,
+        time: 1000,
+      });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+			></script>
+<style>
+    img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+        display: none;
+    }
+</style>
+  </body>
+</html>
