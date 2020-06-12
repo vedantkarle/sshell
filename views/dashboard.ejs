@@ -1,21 +1,27 @@
+
+
 <!DOCTYPE html>
-<!-- Created By Sshell -->
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>sshell | Machines</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content= "width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SSHELL | Dashboard</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y="
       crossorigin="anonymous"
     />
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="icon" href="https://i.ibb.co/MgLtyCm/SShell-Logo.png" />
+	<link type="text/css" rel="stylesheet" href="/css/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+      integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
@@ -23,722 +29,292 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        text-decoration: none;
-      }
-
-      body {
-        /* background: url("https://wallpaperplay.com/walls/full/0/c/b/8972.jpg"); */
-        background: #1d232e;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .sidebar {
-        position: absolute;
-        left: -250px;
-        width: 250px;
-        height: 100%;
-        background: #12161d;
-        transition: all 0.5s ease;
-      }
-
-      .sidebar header {
-        font-size: 22px;
-        color: white;
-        line-height: 70px;
-        text-align: center;
-        background: #12161d;
-        user-select: none;
-      }
-
-      .sidebar ul a {
-        display: block;
-        height: 100%;
-        width: 100%;
-        line-height: 65px;
-        font-size: 20px;
-        color: white;
-        padding-left: 40px;
-        box-sizing: border-box;
-        border-bottom: 1px solid black;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        transition: 0.4s;
-      }
-
-      ul li:hover a {
-        padding-left: 50px;
-      }
-
-      .sidebar ul a i {
-        margin-right: 16px;
-      }
-
-      #check {
-        display: none;
-      }
-
-      label #btn,
-      label #cancel {
-        position: absolute;
-        background: #1d232e;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-
-      label #btn {
-        left: 40px;
-        top: 25px;
-        font-size: 35px;
-        color: white;
-        padding: 6px 12px;
-        transition: all 0.5s;
-      }
-
-      label #cancel {
-        z-index: 1111;
-        left: -195px;
-        top: 17px;
-        font-size: 30px;
-        color: #04a2fd;
-        padding: 4px 9px;
-        transition: all 0.5s ease;
-      }
-
-      #check:checked ~ .sidebar {
-        left: 0;
-      }
-
-      #check:checked ~ label #btn {
-        left: 250px;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      #check:checked ~ label #cancel {
-        left: 195px;
-      }
-
-      #check:checked ~ section {
-        margin-left: 250px;
-      }
-
-      section {
-        background-position: center;
-        background-size: cover;
-        height: 100vh;
-        transition: all 0.5s;
-      }
-
-      .numbers {
-        display: flex;
-        justify-content: center;
-      }
-
-      .flexbox-item {
-        width: 200px;
-        height: 80px;
-        margin: 10px;
-        margin-bottom: 50px;
-        position: relative;
-      }
-
-      .flexbox-item p {
-        position: absolute;
-        top: 43%;
-        left: 40%;
-        transform: translate(-50%, -50%);
-        font-size: 30px;
-      }
-
-      .flexbox-item .one {
-        position: absolute;
-        top: 80%;
-        font-size: 13px;
-      }
-
-      .rooms,
-      .users,
-      .rank,
-      .tasks {
-        border: 2px solid #04a2fd;
-        border-radius: 5px;
-      }
-
-      .flexbox-item .logo {
-        position: absolute;
-        top: 46%;
-        left: 85%;
-      }
-
-      .rooms .border-left {
-        width: 5px;
-        height: 100%;
-        background: #f70037;
-      }
-
-      .users .border-left {
-        width: 5px;
-        height: 100%;
-        background: cornflowerblue;
-      }
-
-      .rank .border-left {
-        width: 5px;
-        height: 100%;
-        background: brown;
-      }
-
-      .tasks .border-left {
-        width: 5px;
-        height: 100%;
-        background: white;
-      }
-
-      .card {
-        position: relative;
-        text-align: center;
-        top: 50%;
-        left: 15%;
-        border: 3px solid #04a2fd;
-        width: 50rem;
-        margin-bottom: 10px;
-      }
-
-      .fa-tasks {
-        position: absolute;
-        left: 2%;
-        font-size: 35px;
-      }
-
-      label {
-        display: block;
-        margin: 0;
-        z-index: 2;
-      }
-
-      .profile {
-        position: relative;
-        left: 28%;
-        top: 40%;
-      }
-
-      .fa-power-off {
-        position: relative;
-        left: 30%;
-        top: 43%;
-        font-size: 20px;
-        z-index: 2;
-      }
-
-      .heading {
-        position: relative;
-        left: 7%;
-      }
-      .contain {
-        display: flex;
-        justify-content: start;
-        position: absolute;
-        left: 5%;
-      }
-      .chart-1 {
-        position: relative;
-        left: 38%;
-        width: 30rem;
-        height: 25rem;
-      }
-      .wrapper {
-        position: absolute;
-        top: -30%;
-        left: 140%;
-        width: 50%;
-        height: 100%;
-      }
-      .lboard_section{
-        color: white;
-        width: 500px;
-        height: 440px;
-        margin: 100px auto 0;
-        background: #04a2fd;
-        border-radius: 5px;
-        padding: 25px 40px;
-        position: relative;
-      }
-      .lboard_section ul{
-        display: flex;
-      }
-      .lboard_section ul li{
-        margin-right: 50px;
-        font-size: 18px;
-        font-weight: 600;
-        color: #3a3d51;
-        cursor: pointer;
-        transition: all 0.5s;
-      }
-      .lboard_section ul li:hover,
-      .lboard_section ul li.active{
-        color: #fff;
-      }
-      .lboard_wrap{
-        position: absolute;
-        top: 70px;
-        left: 40px; 
-        background: #1d232e;  
-        width: 100%;
-        height: 100%;
-        border: 2px solid white;
-        border-radius: 5px;
-      }
-      .lboard_wrap .lboard_item{
-        padding: 20px;
-      }
-      .lboard_wrap .lboard_item .lboard_mem{
-        display: flex;
-        align-items: center;
-        padding: 20px 0;
-        border-bottom: 1px solid #fff;
-      }
-
-      .lboard_wrap .lboard_item .lboard_mem:first-child{
-        padding-top: 0;
-      }
-
-      .lboard_wrap .lboard_item .lboard_mem:last-child{
-        border-bottom: 0;
-        padding-bottom: 0;
-      }
-      .lboard_wrap .lboard_mem .img{
-        width: 50px;
-      }
-      .lboard_wrap .lboard_mem .img img{
-        display: block;
-        width: 100%;
-      }
-      .lboard_wrap .lboard_item .name_bar{
-        margin: 0 20px;
-        width: calc(100% - 150px);
-      }
-      .lboard_wrap .lboard_item .name_bar a {
-        color: #fff;
-      }
-      .lboard_wrap .lboard_item .name_bar a span{
-        margin-right: 5px;
-      }
-      .lboard_wrap .lboard_item .points{
-        width: 115px;
-      }
-      .lboard_wrap .lboard_item .bar_wrap{
-        height: 5px;
-        width: 100%;
-        background: #3a3d51;
-        border-radius:5px;
-        margin-top: 5px;  
-        position: relative;
-        overflow: hidden;
-      }
-      .lboard_wrap .lboard_item .bar_wrap .inner_bar{
-        position: absolute;
-        top:0;
-        left:0;
-        height: 5px;
-        background: #fff;
-        border-radius: 5px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 
-  <body>
-    <input type="checkbox" id="check" />
-    <label for="check">
-      <i class="fas fa-bars" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <header>
-      <div
-        class="main"
-        style="
-          background: #12161d;
-          height: 80px;
-          display: flex;
-          justify-content: center;
-          z-index: -1;
-        "
+  
+  <body oncontextmenu="return false">
+
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-mattBlackLight fixed-top"
+      style="z-index: 99999999;"
+    >
+      <button class="navbar-toggler sideMenuToggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="/" style="font-size: 25px;"
+        >S<span style="color: #04a2fd;">SHELL</span></a
       >
-        <p
-          class="heading"
-          style="
-            text-align: center;
-            font-size: 40px;
-            color: white;
-            padding-top: 10px;
-          "
-        >
-          <i class="fa fa-qrcode" style="font-size: 40px;"></i>&nbsp;Dashboard
-        </p>
-        <a href="/users/<%=currentUser.id%>" class="profile" style="color: white; z-index: 2;"
-          ><i class="fas fa-user"></i>&nbsp;&nbsp;<%=currentUser.username%></a
-        >
-        <i
-          class="fas fa-power-off"
-          style="color: #f70037; cursor: pointer;"
-		   href="/home"
-        ></i>
-      </div>
-    </header>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="sidebar">
-      <header style="font-size: 35px;">
-        S<span style="color: #04a2fd; font-size: 35px;">SHELL</span>
-      </header>
-      <ul>
-        <li>
-          <a href="/dashboard"><i class="fas fa-qrcode"></i>Dashboard</a>
-        </li>
-        <li>
-          <a href="/machines"><i class="fa fa-desktop"></i>Machines</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-desktop"></i>Labs</a>
-        </li>
-        <li>
-          <a href="#"><i class="far fa-question-circle"></i>Acccess</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-list-ol"></i>Leaderboard</a>
-        </li>
-        <li>
-          <a href="#"><i class="far fa-envelope"></i>Social</a>
-        </li>
-      </ul>
-    </div>
-    <section>
-      <div class="numbers">
-        <div class="flexbox-item rooms">
-          <div class="border-left"></div>
-          <p style="color: white;">188</p>
-          <p style="color: white;" class="one">Machines</p>
-          <p class="logo">
-            <i class="fa fa-desktop" style="color: #f70037;"></i>
-          </p>
-        </div>
-        <div class="flexbox-item users">
-          <div class="border-left"></div>
-          <p style="color: white;">117</p>
-          <p style="color: white;" class="one">Labs</p>
-          <p class="logo">
-            <i
-              class="fa fa-desktop"
-              style="color: cornflowerblue; font-size: 35px;"
-            ></i>
-          </p>
-        </div>
-        <div class="flexbox-item rank">
-          <div class="border-left"></div>
-          <p style="color: white;">116</p>
-          <p style="color: white;" class="one">Users</p>
-          <p class="logo"><i class="fa fa-users" style="color: brown;"></i></p>
-        </div>
-        <div class="flexbox-item tasks">
-          <div class="border-left"></div>
-          <p style="color: white;">116</p>
-          <p style="color: white;" class="one">Tasks</p>
-          <p class="logo">
-            <i class="fa fa-list-ol" style="color: white;"></i>
-          </p>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle p-0"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="material-icons icon">
+                person
+              </i>
+              <span class="text">kanishkjamgaonkar</span>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdown"
+            >
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
       </div>
-
-      <div class="contain">
-        <div
-          class="card chart-1"
-          style="
-            background: #1d232e;
-            color: #04a2fd;
-            border: 2px solid #04a2fd;
-          "
-        >
-          <div class="card-body" style="text-align: center;">
-            <h1>
-              Player Rank
-              <button
-                class="btn btn-primary"
-                onclick="updateChart()"
-                style="background: none;"
+    </nav>
+    <div class="wrapper d-flex">
+      <div class="sideMenu bg-mattBlackLight">
+        <div class="sidebar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="material-icons icon">
+                  dashboard
+                </i>
+                <span class="text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="material-icons icon">
+                  person
+                </i>
+                <span class="text">User Profile</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="material-icons icon"> insert_chart </i
+                ><span class="text">Labs</span></a
               >
-                Update
-              </button>
-            </h1>
-          </div>
-          <div class="card-body">
-            <canvas id="myChart" width="50" height="20"></canvas>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="lboard_section">
-            <div class="lboard_tabs">
-              <ul>
-                <li data-li="today">Today</li>
-                <li class="active" data-li="month">Month</li>
-                <li data-li="year">Year</li>
-              </ul>
-            </div>
-            <div class="lboard_wrap">
-              <div class="lboard_item today" style="display: none;">
-                <div class="lboard_mem">
-                  <div class="img">
-                    <img src="pic_1.png" alt="picture_1">
-                  </div>
-                  <div class="name_bar">
-                    <a href="#"><span>1.</span>Sujal Jain</a>
-                    <div class="bar_wrap">
-                      <div class="inner_bar" style="width: 95%;">
-                    </div>
-                    </div>
-                  </div>
-                  <div class="points">
-                    76812 points
-                  </div>
-                </div>
-                <div class="lboard_mem">
-                  <div class="img">
-                    <img src="pic_2.png" alt="picture_2">
-                  </div>
-                  <div class="name_bar">
-                    <a href="#"><span>2.</span>Varshit Modi</a>
-                    <div class="bar_wrap">
-                      <div class="inner_bar" style="width: 80%;">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="points">
-                    76810 points
-                  </div>
-                </div>
-                <div class="lboard_mem">
-                  <div class="img">
-                    <img src="pic_3.png" alt="picture_3">
-                  </div>
-                  <div class="name_bar">
-                    <a href="#"><span>3.</span>Thor</a>
-                    <div class="bar_wrap">
-                      <div class="inner_bar" style="width: 50%;">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="points">
-                    76712 points
-                  </div>
-                </div>
-                <div class="lboard_mem">
-                  <div class="img">
-                    <img src="pic_4.png" alt="picture_4">
-                  </div>
-                  <div class="name_bar">
-                    <a href="#"><span>4.</span>Sanchita</a>
-                    <div class="bar_wrap">
-                      <div class="inner_bar" style="width: 30%;">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="points">
-                    76666 points
-                  </div>
-                </div>
-                <div class="lboard_mem">
-                  <div class="img">
-                    <img src="pic_2.png" alt="picture_5">
-                  </div>
-                  <div class="name_bar">
-                    <a href="#"><span>5.</span>Vedant Karle</a>
-                    <div class="bar_wrap">
-                      <div class="inner_bar" style="width: 10%;">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="points">
-                    76812 points
-                  </div>
-                </div>
-              </div>
-              <div class="lboard_item month" style="display: block;"><div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_1.png" alt="picture_1">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>1.</span>Sujal Jain</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 85%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76812 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_2.png" alt="picture_2">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>2.</span>Varshit Modi</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 80%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76810 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_3.png" alt="picture_3">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>3.</span>Kanishk</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 60%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76712 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_4.png" alt="picture_4">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>4.</span>Sanchita</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 30%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76666 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_2.png" alt="picture_5">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>5.</span>Vedant Karle</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 10%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76812 points
-                </div>
-              </div></div>
-              <div class="lboard_item year" style="display: none;">
-                <div class="lboard_mem">
-                  <div class="img">
-                    <img src="pic_1.png" alt="picture_1">
-                  </div>
-                <div class="name_bar">
-                  <a href="#"><span>1.</span>Sujal Jain</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 95%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76812 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_2.png" alt="picture_2">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>2.</span>Varshit Modi</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 80%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76810 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_3.png" alt="picture_3">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>3.</span>Kanishk</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 60%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76712 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_4.png" alt="picture_4">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>4.</span>Loki</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 30%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76666 points
-                </div>
-              </div>
-              <div class="lboard_mem">
-                <div class="img">
-                  <img src="pic_2.png" alt="picture_5">
-                </div>
-                <div class="name_bar">
-                  <a href="#"><span>5.</span>Mathews</a>
-                  <div class="bar_wrap">
-                    <div class="inner_bar" style="width: 20%;">
-                    </div>
-                  </div>
-                </div>
-                <div class="points">
-                  76812 points
-                </div>
-              </div></div>
-            </div>
-          </div>
-        </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="material-icons icon">
+                  computer
+                </i>
+                <span class="text">Machines</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="material-icons icon">
+                  stars
+                </i>
+                <span class="text">Leaderboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2">
+                <i class="material-icons icon">help </i>
+                <span class="text">Access</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 sideMenuToggler">
+                <i class="material-icons icon expandView">
+                  view_list
+                </i>
+                <span class="text">Close</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+      <div class="content">
+        <main>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-4 my-3">
+                <div
+                  class="bg-mattBlackLight px-3 py-3"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 1px solid #04a2fd;
+                    border-radius: 20px;
+                    background:transparent;
+                  "
+                >
+                  <i
+                    class="material-icons icon"
+                    style="font-size: 40px; color: #04a2fd;"
+                    >insert_chart</i
+                  >
+                  <h4 class="mb-2" style="font-size: 40px;">
+                    Labs
+                  </h4>
+                  <span style="font-size: 40px;">00</span>
+                </div>
+              </div>
+              <div class="col-md-4 my-3">
+                <div
+                  class="bg-mattBlackLight px-3 py-3"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 2px solid #04af2d;
+                    border-radius: 20px;
+                     background:transparent;
+                  "
+                >
+                  <i
+                    class="material-icons icon"
+                    style="font-size: 40px; color: #04af2d;"
+                    >computer</i
+                  >
+                  <h4 class="mb-2" style="font-size: 35px;">
+                    Machines
+                  </h4>
+                  <span style="font-size: 40px;">00</span>
+                </div>
+              </div>
+              <div class="col-md-4 my-3">
+                <div
+                  class="bg-mattBlackLight p-3"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 2px solid crimson;
+                    border-radius: 20px;
+                     background:transparent;
+                  "
+
+                >
+                  <i
+                    class="material-icons icon"
+                    style="font-size: 40px; color: crimson;"
+                    >person</i
+                  >
+                  <h4 class="mb-2" style="font-size: 35px;">
+                    Users
+                  </h4>
+                  <span style="font-size: 40px;">00</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="bg-mattBlackLight my-2 p-3">
+                  <h6 style="text-align: center; color:#009cff">Player Rank</h6>
+                  <div class="card-body">
+                    <canvas id="myChart" width="50" height="20"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div
+                  class="bg-mattBlackLight my-2 p-3"
+                  style="text-align: center;"
+                >
+                  <h6 style="text-align: center;color:#009cff">Rankings</h6>
+                  <table class="table table-dark table-hover" style="background:#1e263d">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">Points</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+			<td>Sujal</td>
+			<td>15</td>
+                        <td>39287</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Varshit</td>
+                        <td>12</td>
+                        <td>34840</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Kanishk</td>
+                        <td>10</td>
+                        <td>31299</td>
+                      </tr>
+                    </tbody>
+		  </table><br>
+                  <a href="#">View All ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <br><br><br><br>
+    <h5 align="center" style="color:#009cff">S<span style="color:white">SHELL Pentesting Labs</span></h5>
+    <script>
+      let progress = document.getElementById("progressbar");
+      let totalHeight = document.body.scrollHeight - window.innerHeight;
+      window.onscroll = function () {
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%";
+      };
+    </script>
     <script>
       var oldData = [12, 19, 3, 5, 2, 3];
       var newData = [20, 45, 5, 23, 75, 45];
       var ctx = document.getElementById("myChart").getContext("2d");
       var mylineChart = new Chart(ctx, {
-        type: "line",
+        type: "bar",
         data: {
           labels: ["January", "February", "March", "April", "May", "June"],
           datasets: [
             {
               label: "Rank",
               data: oldData,
-              backgroundColor: ["rgba(0,0,0,0)"],
-              borderColor: ["rgba(0, 99, 200, 1)"],
+              backgroundColor: [
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+              ],
+              borderColor: [
+                "rgba(0, 99, 200, 1)",
+                "rgba(0, 99, 200, 1)",
+                "rgba(0, 99, 200, 1)",
+                "rgba(0, 99, 200, 1)",
+                "rgba(0, 99, 200, 1)",
+                "rgba(0, 99, 200, 1)",
+              ],
               borderWidth: 3,
             },
           ],
@@ -749,66 +325,50 @@
               {
                 ticks: {
                   beginAtZero: true,
-                  reverse: true,
+                  reverse: false,
                 },
               },
             ],
           },
         },
       });
-
-      function updateChart() {
-        mylineChart.data.datasets[0].data = newData;
-        mylineChart.update();
-      }
     </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+      integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"
+      integrity="sha256-qE/6vdSYzQu9lgosKxhFplETvWvqAAlmAuR+yPh/0SI="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      let tabs = document.querySelectorAll(".lboard_tabs ul li");
-      let today = document.querySelector(".today");
-      let month = document.querySelector(".month");
-      let year = document.querySelector(".year");
-      let items = document.querySelectorAll(".lboard_item");
+      $(document).ready(function () {
+        $(".sideMenuToggler").on("click", function () {
+          $(".wrapper").toggleClass("active");
+        });
 
-      tabs.forEach(function(tab){
-        tab.addEventListener("click",function(){
-          let currentdatali = tab.getAttribute("data-li");
+        var adjustSidebar = function () {
+          $(".sidebar").slimScroll({
+            height:
+              document.documentElement.clientHeight -
+              $(".navbar").outerHeight(),
+          });
+        };
 
-          tabs.forEach(function(tab){
-            tab.classList.remove("active");
-          })
-
-
-          tab.classList.add("active");
-
-          items.forEach(function(item){
-            item.style.display="none";
-          })
-
-          if(currentdatali=="today"){
-              today.style.display="block";
-          }
-          else if(currentdatali=="month"){
-              month.style.display = "block";
-          }else{
-              year.style.display = "block";
-          }
-        })
-      })
+        adjustSidebar();
+        $(window).resize(function () {
+          adjustSidebar();
+        });
+      });
     </script>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+
   </body>
 </html>
+

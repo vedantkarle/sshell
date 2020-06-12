@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,700");
+      @import url("https://fonts.googleapis.com/css?family=Courgette");
+      .bg-mattBlackLight {
+        background-color: #1e263d;
+      }
+
+      .text-mattBlackLight {
+        color: #303337;
+      }
+
+      .bg-mattBlackDark,
+      body,
+      .nav-link:hover,
+      .nav-link.active {
+        background-color:#15192a;
+      }
+
+      .text-mattBlackDark {
+        color: #212121;
+      }
+
+      .bg-mattGray {
+        background-color: #878d8d;
+      }
+
+      .text-mattGray,
+      body,
+      .nav-link .icon,
+      .nav-link .text {
+        color: #878d8d;
+      }
+
+      .bg-mattRed {
+        background-color: #ec6271;
+      }
+
+      .text-mattRed,
+      .nav-link:hover .icon,
+      .nav-link:hover .text,
+      .nav-link.active .icon,
+      .nav-link.active .text {
+        color: #04a2fd;
+      }
+
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        height: 100px;
+      }
+
+      .wrapper {
+        margin-top: 3.5rem;
+      }
+
+      .wrapper .sideMenu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin: 3.5rem auto auto;
+        left: 0;
+        width: 12.5rem;
+        -webkit-transition: all ease 0.25s;
+        transition: all ease 0.25s;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        z-index: 2000;
+      }
+
+      .wrapper .content {
+        width: 100%;
+        margin-left: 0rem;
+        -webkit-transition: all ease 0.25s;
+        transition: all ease 0.25s;
+      }
+
+      .wrapper.active .sideMenu {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      .nav-link {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: block;
+        white-space: nowrap;
+      }
+
+      .nav-link .icon {
+        margin-right: 0.25rem;
+        font-size: 1.875rem;
+        vertical-align: middle;
+        height: 2rem;
+        width: 2rem;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .nav-link .text {
+        font-size: 0.875rem;
+      }
+
+      .lboard_section {
+        color: white;
+        width: 500px;
+        height: 440px;
+        margin: 100px auto 0;
+        background: #04a2fd;
+        border-radius: 5px;
+        padding: 25px 40px;
+        position: relative;
+      }
+      .lboard_section ul {
+        display: flex;
+      }
+      .lboard_section ul li {
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #3a3d51;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+      .lboard_section ul li:hover,
+      .lboard_section ul li.active {
+        color: #fff;
+      }
+      .lboard_wrap {
+        position: absolute;
+        top: 70px;
+        left: 40px;
+        background: #1d232e;
+        width: 100%;
+        height: 100%;
+        border: 2px solid white;
+        border-radius: 5px;
+      }
+      .lboard_wrap .lboard_item {
+        padding: 20px;
+      }
+      .lboard_wrap .lboard_item .lboard_mem {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #fff;
+      }
+
+      .lboard_wrap .lboard_item .lboard_mem:first-child {
+        padding-top: 0;
+      }
+
+      .lboard_wrap .lboard_item .lboard_mem:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+      .lboard_wrap .lboard_mem .img {
+        width: 50px;
+      }
+      .lboard_wrap .lboard_mem .img img {
+        display: block;
+        width: 100%;
+      }
+      .lboard_wrap .lboard_item .name_bar {
+        margin: 0 20px;
+        width: calc(100% - 150px);
+      }
+      .lboard_wrap .lboard_item .name_bar a {
+        color: #fff;
+      }
+      .lboard_wrap .lboard_item .name_bar a span {
+        margin-right: 5px;
+      }
+      .lboard_wrap .lboard_item .points {
+        width: 115px;
+      }
+      .lboard_wrap .lboard_item .bar_wrap {
+        height: 5px;
+        width: 100%;
+        background: #3a3d51;
+        border-radius: 5px;
+        margin-top: 5px;
+        position: relative;
+        overflow: hidden;
+      }
+      .lboard_wrap .lboard_item .bar_wrap .inner_bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background: #fff;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      #scrollPath {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      #progressbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 10px;
+        z-index: 99999;
+        background: #00b7ff;
+      }
+
+      #progressbar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #00b7ff;
+        filter: blur(10px);
+      }
+
+      #progressbar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #00b7ff;
+        filter: blur(10px);
+      }
+
+      @media (min-width: 992px) {
+        .wrapper .sideMenu {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+        .wrapper .content {
+          margin-left: 12.5rem;
+        }
+        .wrapper.active .sideMenu {
+          width: 5rem;
+        }
+        .wrapper.active .sideMenu .nav-link {
+          text-align: center;
+        }
+        .wrapper.active .sideMenu .nav-link .icon {
+          margin-right: 0;
+        }
+        .wrapper.active .sideMenu .nav-link .text {
+          display: none;
+        }
+        .wrapper.active .content {
+          margin-left: 5rem;
+        }
+      }
+      .card {
+        text-align: center;
+        border: 3px solid #04a2fd;
+        width: 50rem;
+        margin-bottom: 10px;
+      }
+      .fa-tasks {
+        position: absolute;
+        left: 2%;
+        font-size: 35px;
+      }
+      #machines {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }

@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+   
+    <meta name="viewport" content= "width=device-width, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.ibb.co/MgLtyCm/SShell-Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="/css/index.css" />
+    <title>SShell</title>
+    <style>
+        
+    </style>
+</head>
+
+<body oncontextmenu="return false">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="z-index: 9999999;">
+        <a class="navbar-brand" href="#" style="font-size: 30px; color: #1cceff";>S<span  style="color:white;">SHELL</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               
+                <li class="nav-item active">
+            <a class="nav-link" href="/team">Our Team</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/contact">Contact us</a>
+                </li>
+
+                <li class="nav-item active">
+            <a class="nav-link" style="color:white"  href="/CTF">Join CTF</a>
+        </li>
+     </ul>
+    
+        </div>
+         <% if(!currentUser) { %>
+        <form class="form-inline my-2 my-lg-0">
+            
+          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="/login">
+            Login</a
+          >&nbsp;
+          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="/register">
+            Sign Up</a
+          >&nbsp;
+		</form>
+		<% } else { %>
+		 <form class="form-inline my-2 my-lg-0">
+            
+          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="/logout">
+            Logout</a
+          >&nbsp;
+          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" href="/dashboard">
+            Dashboard</a
+          >&nbsp;
+		</form>
+		<% } %>
+    </nav>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+
+    <a href="#"><img src="https://i.ibb.co/MgLtyCm/SShell-Logo.png" alt="SShell-Logo" border="0"
+            class="sshell-logo"></a>
+    <div class="banner-area">
+        <h3><b>PEN -TESTING LABS</b></h3><br>
+        <h2>
+            Are You @:~<span class="type" style="color: white;"></span>
+        </h2>
+    </div>
+    <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <div class="d-flex bd-highlight" id="about" style="padding: 70px; background: rgba(0, 0, 0, 0.8);">
+                                <div class="p-2 w-100 bd-highlight" style="color: white;">
+                                      <h1>
+                                                      About <span style="color: #30c1ff">S</span><span style="color:white;">SHELL</span></h1>
+
+                                             <p>
+                                                     Sshell is an upcoming platform founded by young enthusiasts,<br>who highly value their ambition to bring
+                                             awareness and spread <br>maximum knowledge about cyber space.<br> <br>
+                                                                     Sshell is here for you to help you reach your milestone in cyber sense <br>and so we are developing an
+                                                                             online community that provides a platform <br>which allows you to test your penetration testing skills
+                                                                                     and<br> share your experiences with people stark in this field.
+                                                                                         </p>
+                                                                                                 <button class="join"><a href="#" style="color:white"><b>Join Now</b></a></button>
+
+                                                                                                 </div>
+                                                                                                     <div class="p-2 flex-shrink-1 bd-highlight sshell-video" style="border: 1px solid white; color: white; padding: 5px;">
+                                                                                                             <iframe width="560" height="315" src="https://www.youtube.com/embed/Ykh1UFmjtN8" 
+                                                                                                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                                                                     <!-- <div class="d-flex justify-content-end" style="padding-right: 20px;"></div> -->
+                                                                                                                     </div>
+
+                                                                                                                         
+                                                                                                                     </div>
+    <div class="features">
+        <section class="section-services">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-10 col-lg-8">
+                        <div class="header-section">
+                            <h2 class="title">Exclusive <span>Features</span></h2>
+                            <p class="description" style="color:cyan">We have a lot to offer!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Start Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="part-1">
+                                <i class="fa fa-cogs"></i>
+                                <h3 class="title">Massive Labs and Machines</h3>
+                            </div>
+                            <div class="part-2">
+                                <p class="description">
+                                    Learn, practice and complete! Get hands on and practise your
+                                    skills in a real-world environment by completing guided and
+                                    interactive tasks..
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / End Single Service -->
+                    <!-- Start Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="part-1">
+                                <i class="fab fa-angellist"></i>
+                                <h3 class="title">Workshops</h3>
+                            </div>
+                            <div class="part-2">
+                                <p class="description">
+
+                                    Need security training? We deliver hands on workshops. We use trainers experienced
+                                    in the field of interest.<br /><br />
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / End Single Service -->
+                    <!-- Start Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="part-1">
+                                <i class="fas fa-award"></i>
+                                <h3 class="title">Ranks and Badges</h3>
+                            </div>
+                            <div class="part-2">
+                                <p class="description">
+                                    Compete with other users to reach the top and show off your
+                                    progress with many different ranks and badges.<br /><br />
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / End Single Service -->
+                    <!-- Start Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="part-1">
+                                <i class="fa fa-desktop"></i>
+                                <h3 class="title">Dedicated Labs</h3>
+                            </div>
+                            <div class="part-2">
+                                <p class="description">
+                                    Rent your own private lab for your company or university,
+                                    fully managed and tailored to your requirements.<br /><br />
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / End Single Service -->
+                    <!-- Start Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="part-1">
+                                <i class="fa fa-book"></i>
+                                <h3 class="title">Guides</h3>
+                            </div>
+                            <div class="part-2">
+                                <p class="description">
+                                    Develop your Cybersecurity skills by working through hands-on guided tasks and
+                                    supporting videos.
+                                </p><br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / End Single Service -->
+                    <!-- Start Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="part-1">
+                                <i class="fa fa-code"></i>
+                                <h3 class="title">Challenges</h3>
+                            </div>
+                            <div class="part-2">
+                                <p class="description">
+                                    Learn and test your skills with gamified, real-world Cybersecurity
+                                    challenges.<br><br><br>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / End Single Service -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="numbers" style="color: white;">
+        <div class="flexbox-item">
+            <p>Coming Soon</p>
+            <p class="one">Users</p>
+        </div>
+        <div class="flexbox-item">
+            <p>Coming soon</p>
+            <p class="one">Labs</p>
+        </div>
+        <div class="flexbox-item">
+            <p>Coming soon</p>
+            <p class="one">Machines</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+        <div class="inner-footer">
+            <div class="footer-items">
+
+                <a href="#"><img src="https://i.ibb.co/MgLtyCm/SShell-Logo.png" alt="SShell-Logo" border="0"
+                        class="sshell-logo-footer"></a>
+            </div>
+
+            <div class="footer-items">
+                <h2>Quick Links</h2>
+                <ul>
+                    <a href="#">
+                        <li>Home</li>
+                    </a>
+
+                    <a href="/team">
+                        <li>Our Team</li>
+                    </a>
+                    <a href="/contact">
+                        <li>Contact Us</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="footer-items">
+                <h1>Services</h1>
+                <ul>
+                    <a href="/labs">
+                        <li>Labs</li>
+                    </a>
+                    <a href="/machines">
+                        <li>Machines</li>
+                    </a>
+                    <a href="/CTF">
+                        <li>CTF</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="footer-items">
+                <h1>Contact us</h1>
+                <ul>
+                    <li>
+                        <i class="fa fa-map-marker-alt"></i>&nbsp;Mit-Wpu,Pune,India
+                    </li>
+                    
+<a href="mailto:approachsshell@gmail.com"><li> <i style="color: white" class="fa fa-envelope"></i>&nbsp;E-Mail Us </li></a>
+                   
+                </ul>
+                <div class="social-media" style="color: white;">
+            <a href="https://discord.gg/FK978Zm"><i class="fab fa-discord"></i></a>  
+            <a href="https://www.youtube.com/channel/UC-hm8uB-YlyACUhf_nde5ng"><i class="fab fa-youtube"></i></a>
+                   
+                    <a href="https://www.instagram.com/sshell.in/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/sshell"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+	</div>
+        <div class="footer-bottom">
+            Copyright &copy; sshell.in 2020. All rights reserved.
+        </div>
+        <script>
+            let progress = document.getElementById("progressbar");
+            let totalHeight = document.body.scrollHeight - window.innerHeight;
+            window.onscroll = function () {
+                let progressHeight = (window.pageYOffset / totalHeight) * 100;
+                progress.style.height = progressHeight + "%";
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <script>
+            var typed = new Typed(".type", {
+                strings: [
+                    "Beginner",
+                    "Hacker",
+                    "Linux User",
+                    "Geek",
+                    "Learner",
+                ],
+                typeSpeed: 60,
+                backSpeed: 60,
+                loop: true,
+            });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        
+</body>
+
+</html>

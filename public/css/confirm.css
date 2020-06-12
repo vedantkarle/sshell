@@ -1,0 +1,65 @@
+ body {
+        background: black;
+        font-family: "Poppins", sans-serif;
+      }
+      .message {
+        position: absolute;
+        top: 50%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 500px;
+        border: 3px solid #38d39f;
+        border-radius: 30px;
+      }
+      #icon {
+        position: absolute;
+        top: 5%;
+        left: 40%;
+        font-size: 100px;
+        color: #38d39f;
+      }
+      h2 {
+        color: white;
+        position: absolute;
+        top: 30%;
+        left: 36%;
+      }
+      p {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 12%;
+        font-size: 20px;
+      }
+      a {
+        position: absolute;
+        top: 70%;
+        left: 42%;
+        text-decoration: none;
+        color: #38d39f;
+        font-size: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        .message {
+          position: absolute;
+          top: 50%;
+          left: 48%;
+          transform: translate(-50%, -50%);
+          width: 400px;
+          height: 300px;
+          border: none;
+        }
+        #icon {
+          position: absolute;
+          left: 50%;
+          font-size: 40px;
+        }
+        h2 {
+          position: absolute;
+          left: 34%;
+        }
+        p {
+          font-size: 13px;
+        }
+      }
